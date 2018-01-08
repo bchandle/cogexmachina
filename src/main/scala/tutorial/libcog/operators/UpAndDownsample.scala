@@ -15,6 +15,8 @@
  */
 package tutorial.libcog.operators
 
+import java.nio.file.Paths
+
 import cogdebugger._
 import cogio.imagefiles.GrayscaleImage
 import libcog._
@@ -25,7 +27,7 @@ import libcog._
   */
 object UpAndDownsample extends CogDebuggerApp(
   new ComputeGraph{
-    val img = GrayscaleImage("resources/oranges.jpg")
+    val img = GrayscaleImage(Paths.get("src", "main", "resources", "oranges.jpg").toString)
 
     //downsample by a factor of 2
     val down2 = downsample(img, 2)

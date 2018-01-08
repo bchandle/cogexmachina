@@ -15,6 +15,8 @@
  */
 package tutorial.libcog.operators
 
+import java.nio.file.Paths
+
 import cogdebugger._
 import cogio.imagefiles.GrayscaleImage
 import libcog._
@@ -26,7 +28,7 @@ import libcog._
   */
 object MinMax extends CogDebuggerApp(
   new ComputeGraph{
-    val img = GrayscaleImage("resources/oranges.jpg")
+    val img = GrayscaleImage(Paths.get("src", "main", "resources", "oranges.jpg").toString)
     val noise = ScalarField.random(img.rows, img.columns)
 
     //returns the img bounded below at 0.5f

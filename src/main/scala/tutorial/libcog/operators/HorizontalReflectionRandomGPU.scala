@@ -16,6 +16,8 @@
 
 package tutorial.libcog.operators
 
+import java.nio.file.Paths
+
 import cogdebugger._
 import cogio._
 import libcog._
@@ -52,7 +54,7 @@ object HorizontalReflectionRandomGPU extends App {
 
 
   val cg = new ComputeGraph {
-    val img = ColorImage("resources/oranges.jpg")
+    val img = ColorImage(Paths.get("src", "main", "resources", "oranges.jpg").toString)
     val imgReflection = randomHorizontalReflection(img.toVectorField)
     probeAll
   }

@@ -16,14 +16,16 @@
 
 package tutorial.libcog.fields
 
+import java.nio.file.Paths
+
 import libcog._
 import cogdebugger._
 import cogio._
 
 object MultipleFields extends CogDebuggerApp (
   new ComputeGraph {
-    val flower = GrayscaleImage("resources/flower.jpg")
-    val oranges = GrayscaleImage("resources/oranges.jpg")
+    val flower = GrayscaleImage(Paths.get("src", "main", "resources", "flower.jpg").toString)
+    val oranges = GrayscaleImage(Paths.get("src", "main", "resources", "oranges.jpg").toString)
     val average = (flower + oranges)/2
     probeAll   // Makes all fields visible in the debugger
   }

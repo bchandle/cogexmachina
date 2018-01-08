@@ -15,6 +15,8 @@
  */
 package tutorial.libcog.operators
 
+import java.nio.file.Paths
+
 import cogdebugger._
 import cogio.imagefiles.GrayscaleImage
 import libcog._
@@ -27,7 +29,7 @@ import libcog._
   */
 object DotProducts extends CogDebuggerApp(
   new ComputeGraph{
-    val img = GrayscaleImage("resources/oranges.jpg").downsample(factor = 8)
+    val img = GrayscaleImage(Paths.get("src", "main", "resources", "oranges.jpg").toString).downsample(factor = 8)
     val noise = ScalarField.random(img.rows, img.columns)
     val vec = vectorField(img,noise)
 

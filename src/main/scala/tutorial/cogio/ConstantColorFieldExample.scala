@@ -16,6 +16,8 @@
 
 package tutorial.cogio
 
+import java.nio.file.Paths
+
 import cogdebugger.CogDebuggerApp
 import cogio.imagefiles.ColorImage
 import cogx.platform.types.Pixel
@@ -43,7 +45,7 @@ object ConstantColorFieldExample extends CogDebuggerApp (
      val constantField = ColorField(Rows, Columns, pixelValue )
 
      // Constant color field read from file.
-     val flower = ColorImage("resources/flower.jpg")
+     val flower = ColorImage(Paths.get("src", "main", "resources", "flower.jpg").toString)
 
      probeAll
    }

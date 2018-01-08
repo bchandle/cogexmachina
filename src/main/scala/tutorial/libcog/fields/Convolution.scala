@@ -16,13 +16,15 @@
 
 package tutorial.libcog.fields
 
+import java.nio.file.Paths
+
 import libcog._
 import cogdebugger._
 import cogio._
 
 object Convolution extends CogDebuggerApp(
   new ComputeGraph {
-    val flower = GrayscaleImage("resources/flower.jpg")
+    val flower = GrayscaleImage(Paths.get("src", "main", "resources", "flower.jpg").toString)
 
     //manually define the elments in the filter
     val filterElements = Array(

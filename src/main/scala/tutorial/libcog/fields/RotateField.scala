@@ -16,13 +16,15 @@
 
 package tutorial.libcog.fields
 
+import java.nio.file.Paths
+
 import libcog._
 import cogdebugger._
 import cogio._
 
 object RotateField extends CogDebuggerApp (
   new ComputeGraph {
-    val oranges = GrayscaleImage("resources/oranges.jpg")
+    val oranges = GrayscaleImage(Paths.get("src", "main", "resources", "oranges.jpg").toString)
     val InRows = oranges.fieldType.rows
     val InCols = oranges.fieldType.columns
 
