@@ -16,13 +16,15 @@
 
 package tutorial.libcog.operators
 
+import java.nio.file.Paths
+
 import cogdebugger.CogDebuggerApp
 import cogio.moviefiles.GrayscaleMovie
 import libcog._
 
 object UpsideDownCPU extends CogDebuggerApp(
   new ComputeGraph {
-    val field = GrayscaleMovie("resources/courtyard.mp4")
+    val field = GrayscaleMovie(Paths.get("src", "main", "resources", "courtyard.mp4").toString)
     val flipped = UpsideDownOperator(field)
     probeAll
   }

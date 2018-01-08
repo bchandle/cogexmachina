@@ -16,13 +16,15 @@
 
 package tutorial.cogio
 
+import java.nio.file.Paths
+
 import cogdebugger._
 import cogio._
 import libcog._
 
 object ColorMovieExample extends CogDebuggerApp (
   new ComputeGraph {
-    val movieFile = "resources/courtyard.mp4"
+    val movieFile = Paths.get("src", "main", "resources", "courtyard.mp4").toString
     val movie = ColorMovie(movieFile)
   }
 )

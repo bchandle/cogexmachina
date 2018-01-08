@@ -16,6 +16,8 @@
 
 package tutorial.cogio
 
+import java.nio.file.Paths
+
 import cogdebugger.CogDebuggerApp
 import cogio._
 import libcog._
@@ -25,7 +27,7 @@ import libcog._
  */
 object BackgroundSubtraction extends CogDebuggerApp (
   new ComputeGraph {
-    val movieFile = "resources/courtyard.mp4"
+    val movieFile = Paths.get("src", "main", "resources", "courtyard.mp4").toString
     val movie = ColorMovie(movieFile, synchronous = false)
     val movieVector = vectorField(movie)
     val background = VectorField(movie.fieldShape, Shape(3))
