@@ -24,7 +24,7 @@ import libcog._
 
 object V1 extends CogDebuggerApp(
   new ComputeGraph {
-    val filename = Paths.get("src", "test", "resources", "courtyard.mp4")
+    val filename = Paths.get("src", "main", "resources", "courtyard.mp4")
 
     val camera = toVectorField(ColorMovie(filename.toString, synchronous = true))
     val background = VectorField(camera.fieldShape, Shape(3))
