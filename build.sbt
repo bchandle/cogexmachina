@@ -86,6 +86,9 @@ libraryDependencies ++= {
   })
 }
 
+// Dependency for neural network toolkit package
+libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.4.0" % "test"
+
 resolvers ++= Seq(Resolver.bintrayRepo("bchandle", "maven"),
                   Resolver.bintrayRepo("hpe-cct", "maven"))
 
