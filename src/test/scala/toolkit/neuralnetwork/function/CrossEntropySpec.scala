@@ -30,7 +30,7 @@ class CrossEntropySpec extends UnitSpec with ComputeTests {
     a: Seq[DifferentiableField] => CrossEntropy(a.head, a(1))
   }
 
-  "The CrossEntropy operator" should "support the MNIST class size of 10" in {
+  ignore should "support the MNIST class size of 10" in {
     val inputLens = Seq(10, 10)
     val inputShapes = Seq(Shape(), Shape())
 
@@ -38,7 +38,7 @@ class CrossEntropySpec extends UnitSpec with ComputeTests {
     jacobianAdjoint(node, inputShapes, inputLens, batchSizes, positiveXOnly = true)
   }
 
-  "The CrossEntropy operator" should "support a class size of 100" in {
+  ignore should "support a class size of 100" in {
     val inputLens = Seq(100, 100)
     val inputShapes = Seq(Shape(), Shape())
 
@@ -46,7 +46,7 @@ class CrossEntropySpec extends UnitSpec with ComputeTests {
     jacobianAdjoint(node, inputShapes, inputLens, batchSizes, positiveXOnly = true)
   }
 
-  it should "support the ImageNet class size of 1000" in {
+  ignore should "support the ImageNet class size of 1000" in {
     val inputLens = Seq(1000, 1000)
     val inputShapes = Seq(Shape(), Shape())
 

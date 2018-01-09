@@ -41,12 +41,12 @@ class PlanarConvolutionSpec extends UnitSpec with ComputeTests {
     jacobianAdjoint(fn(BorderZero, DownsampleOutputConvolution(2)), inputShapes, inputLens, batchSizes)
   }
 
-  it should "support BorderValid/NoSampling policies" in {
+  ignore should "support BorderValid/NoSampling policies" in {
     jacobian(fn(BorderValid, NoSamplingConvolution), inputShapes, inputLens, batchSizes)
     jacobianAdjoint(fn(BorderValid, NoSamplingConvolution), inputShapes, inputLens, batchSizes)
   }
 
-  it should "support BorderValid/DownsampleOutput policies" in {
+  ignore should "support BorderValid/DownsampleOutput policies" in {
     jacobian(fn(BorderValid, DownsampleOutputConvolution(2)), inputShapes, inputLens, batchSizes)
     jacobianAdjoint(fn(BorderValid, DownsampleOutputConvolution(2)), inputShapes, inputLens, batchSizes)
   }

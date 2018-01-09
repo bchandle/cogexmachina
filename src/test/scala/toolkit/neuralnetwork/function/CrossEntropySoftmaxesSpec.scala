@@ -42,7 +42,7 @@ class CrossEntropySoftmaxesSpec extends UnitSpec with ComputeTests {
     jacobianAdjoint(node, inputShapes, inputLens, batchSizes)
   }
 
-  it should "support a class size of 100" in {
+  ignore should "support a class size of 100" in {
     val inputLens = Seq(100, 100)
     val inputShapes = Seq(Shape(), Shape())
 
@@ -50,7 +50,7 @@ class CrossEntropySoftmaxesSpec extends UnitSpec with ComputeTests {
     jacobianAdjoint(node, inputShapes, inputLens, batchSizes)
   }
 
-  it should "support the ImageNet class size of 1000" in {
+  ignore should "support the ImageNet class size of 1000" in {
     val inputLens = Seq(1000, 1000)
     val inputShapes = Seq(Shape(), Shape())
 
@@ -66,7 +66,7 @@ class CrossEntropySoftmaxesSpec extends UnitSpec with ComputeTests {
     jacobianAdjoint(safeNode, inputShapes, inputLens, batchSizes)
   }
 
-  it should "support a class size of 100, with NaN protection" in {
+  ignore should "support a class size of 100, with NaN protection" in {
     val inputLens = Seq(100, 100)
     val inputShapes = Seq(Shape(), Shape())
 
@@ -74,7 +74,7 @@ class CrossEntropySoftmaxesSpec extends UnitSpec with ComputeTests {
     jacobianAdjoint(safeNode, inputShapes, inputLens, batchSizes)
   }
 
-  it should "support the ImageNet class size of 1000, with NaN protection" in {
+  ignore should "support the ImageNet class size of 1000, with NaN protection" in {
     val inputLens = Seq(1000, 1000)
     val inputShapes = Seq(Shape(), Shape())
 
