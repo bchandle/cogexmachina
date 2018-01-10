@@ -29,7 +29,7 @@ object Inpainting extends CogDebuggerApp (
 
     val learnedMask = shuntingNet > 0.2f
 
-    val diffused = solvers.DiffuseDirichlet(maskedMovie * learnedMask, learnedMask)
+    val diffused = solvers.DiffuseDirichlet(maskedMovie, learnedMask)
 
     probe(movie.toColorField, "movie")
     probe(maskedMovie.toColorField, "masked movie")
