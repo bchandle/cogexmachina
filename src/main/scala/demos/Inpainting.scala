@@ -19,7 +19,10 @@ object Inpainting extends CogDebuggerApp (
     val lastFrame = ScalarField(movie.fieldShape)
     lastFrame <== Luma(maskedMovie)
 
-    val motion = abs(Luma(maskedMovie) - lastFrame)
+    val frame = ScalarField(0f)
+    frame <== (frame + 1f) > 0f
+
+    val motion = frame * abs(Luma(maskedMovie) - lastFrame)
 
     val shuntingNet = ScalarField.random(sourceMask.fieldShape)
     shuntingNet <== shuntingNet + (-0.005f * shuntingNet + (1f - shuntingNet) * motion)
